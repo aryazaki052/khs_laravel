@@ -1,3 +1,5 @@
+		
+		
 		<!-- Sidebar -->
 		<div class="sidebar sidebar-style-2">			
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
@@ -87,3 +89,7 @@
 			</div>
 		</div>
 		<!-- End Sidebar -->
+
+		{{-- <div>
+			<h1>adad</h1>
+		</div> --}}
