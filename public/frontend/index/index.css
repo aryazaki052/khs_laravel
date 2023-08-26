@@ -1,0 +1,453 @@
+* {
+  overflow: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* slider */
+
+/* tulisan slider */
+.carousel-item {
+  height: 32rem;
+  color: black;
+}
+
+.tulisan-slider {
+  top: 350px;
+}
+
+.carousel-item {
+  color: black;
+  display: none;
+  /* Sembunyikan semua konten tulisan-slider */
+}
+
+.carousel-item.active {
+  display: block;
+  /* Tampilkan konten tulisan-slider yang sesuai dengan gambar aktif */
+}
+
+
+.ketslider {
+  /* border: 1px solid red; */
+  background-color: rgba(0, 0, 0, 0.425);
+  margin-top: 8%;
+}
+
+.ketslider h1 {
+  color: wheat;
+  font-family: 'Abril Fatface', cursive;
+  font-family: 'Lilita One', cursive;
+  font-size: 70px;
+}
+
+/* akhir tulisan slider */
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 100px;
+  padding-top: 0;
+  border: 0px;
+  /* position: relative; */
+  /* border: 1px solid red; */
+}
+
+.carousel img {
+  border: 0;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  filter: brightness(40%);
+  transition: opacity 1s ease;
+  object-fit: cover;
+  left: 0;
+  bottom: 1px;
+}
+
+.carousel img.active {
+  opacity: 1;
+}
+
+.carousel-indicators {
+  text-align: center;
+  margin-top: 10px;
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+}
+
+.carousel-indicators span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: gray;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel-indicators span.active {
+  background-color: black;
+}
+
+/* akhir slider */
+
+
+
+/* highlight */
+.highlight {
+  padding-top: 80px;
+}
+
+.isi h1 {
+  font-family: 'Kaushan Script', cursive;
+  font-size: 50px;
+}
+
+.isi p {
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: 500;
+}
+
+.highlight-tengah {
+  display: flex;
+  align-items: center;
+}
+
+.logospan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  /* top: 20px; */
+  right: 2%;
+}
+
+.logo-lingkaran {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.box span {
+  display: flex;
+  border-radius: 30px;
+  /* background-color: red; */
+}
+
+.content {
+  padding-top: 40px;
+}
+
+
+.box {
+  opacity: 80%;
+  /* border: 1px solid blue; */
+  position: absolute;
+  z-index: -999;
+  justify-content: center;
+  align-items: center;
+  animation: animasi;
+  animation-play-state: running;
+  animation-duration: 15s;
+  animation-iteration-count: infinite;
+}
+
+.box img {
+  width: 435px;
+  height: 355px;
+}
+
+
+.gmbr-logo {
+  position: absolute;
+}
+
+.lingkaran {
+  width: 300px;
+  height: 295px;
+  border: 15px solid rgb(238, 238, 215);
+  border-radius: 100%;
+  position: relative;
+  top: 7px;
+  z-index: -1;
+}
+
+@keyframes animasi {
+  65% {
+    transform: rotate(-10deg);
+  }
+}
+
+/* akhir highlight */
+
+
+/* shortcut */
+.shortcut {
+  margin-top: 10%;
+}
+
+.shortcut1 {
+  gap: 0px;
+}
+
+.kartu-shortcut {
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, rgba(237, 171, 27, 1) 28%, rgba(234, 169, 42, 1) 55%, rgba(232, 152, 46, 1) 97%);
+  border-radius: 20px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.384);
+}
+
+.kartu-shortcut i {
+  padding-top: 15px;
+}
+
+.icon-shortcut {
+  font-size: 100px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  z-index: 999;
+}
+
+.card-body h5 {
+  font-family: 'Bree Serif', serif;
+  font-size: 25px;
+  color: black;
+}
+
+.card-body a {
+  color: black;
+}
+
+/* .card-body a :hover {
+  color: rgb(255, 255, 255);
+} */
+
+.kartu-shortcut1 {
+  margin-top: 10px;
+  align-items: center;
+  font-family: 'Bree Serif', serif;
+}
+
+
+.btn-hover:hover {
+  background-color: rgb(233, 215, 137);
+  color: rgb(255, 255, 255);
+}
+
+.kartu-shortcut i {
+  color: rgba(0, 0, 0, 0.486)
+}
+
+.card-body a {
+  background-color: rgb(148, 101, 30);
+  border: none;
+  cursor: pointer;
+}
+
+.tilt-box-wrap {
+  /* width: 400px;
+  height: 400px; */
+  /* position: relative; */
+  transition: all 0.6s ease-out;
+  perspective: 500px
+}
+
+.tilt-box-wrap:hover {
+  transition: all 0.3s linear;
+  transform: scale(1.1);
+}
+
+.tilt-box {
+  transition: all 0.6s ease-out;
+  transform: rotateX(0deg) rotateY(0deg);
+}
+
+.tilt-box strong {
+  transform: translateZ(40px);
+}
+
+/* akhir shortcut */
+
+/* kepengurusan */
+
+.kepengurusan-wrap {
+  margin-top: 80px;
+  background: radial-gradient(circle, rgba(237, 171, 27, 1) 28%, rgba(234, 169, 42, 1) 55%, rgba(232, 152, 46, 1) 97%);
+  position: relative;
+}
+
+.kepengurusan h1 {
+  font-family: 'Patua One', cursive;
+  padding-top: 10px;
+  color: black;
+}
+
+.slider-card h6 {
+  font-family: 'Dai Banna SIL', serif;
+}
+
+.slider-card p {
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* akhir kepengurusan */
+
+/* gallery */
+
+/* akhir gallery */
+
+
+
+/* responsive */
+@media screen and (max-width: 991px) {
+
+  /* carousel */
+  .carousel {
+    padding-top: 0;
+  }
+
+  .carousel img {
+    height: 400px;
+    margin-top: 0;
+    top: 0;
+    /* Mengatur posisi gambar di bawah pada ukuran layar kecil */
+  }
+
+  .carousel {
+    height: 400px;
+    position: relative;
+  }
+
+  .ketslider h1 {
+    font-size: 40px;
+  }
+
+  .tulisan-slider {
+    top: 300px;
+  }
+
+  /* akhir carousel */
+
+  /* highlight */
+  .logospan {
+    top: 50px;
+  }
+
+  .highlight {
+    padding-top: 20px;
+  }
+
+  /* akhor highlight */
+  /* shortcut */
+  .shortcut1 {
+    gap: 20px;
+  }
+
+  .shortcut {
+    margin-top: 15%;
+  }
+
+  /* akhir shortcut */
+}
+
+@media screen and (max-width: 576px) {
+
+  /* carousel */
+  .carousel {
+    height: 300px;
+    /* width: 103.5%;
+    left: -13px;
+    position: relative; */
+  }
+
+  .carousel img {
+    width: 103.5%;
+    height: 300px;
+  }
+
+  .tulisan-slider {
+    top: 230px;
+  }
+
+  .ketslider h1 {
+    font-size: 20px;
+  }
+
+  /* akhir carousel */
+
+  /* highlight */
+  .isi h1 {
+    font-size: 36px;
+  }
+
+  .isi p {
+    text-align: justify;
+  }
+
+  .logo-lingkaran img {
+    width: 180px;
+  }
+
+  .box img {
+    width: 320px;
+    height: 210px;
+  }
+
+  .lingkaran {
+    width: 210px;
+    height: 213px;
+  }
+
+  .logospan {
+    top: 3px;
+  }
+
+  .content {
+    padding-top: 30px;
+  }
+
+  .logospan {
+    right: 0;
+  }
+
+  /* akhir highlight */
+
+  /* shortcut */
+  .shortcut1 {
+    gap: 20px;
+  }
+
+  .shortcut {
+    margin-top: 12%;
+  }
+
+  /* akhir shortcut */
+
+
+}
+
+@media screen and (max-width: 344px) {
+  .logo-lingkaran img {
+    width: 130px;
+  }
+
+  .box img {
+    width: 250px;
+    height: 100px;
+  }
+
+  .lingkaran {
+    width: 130px;
+    height: 130px;
+  }
+}

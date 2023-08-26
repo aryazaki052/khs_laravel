@@ -72,16 +72,23 @@
 								<i class="fas fa-desktop"></i>
 								<p>Kategori</p>
 							</a>
-							
-							<a  href="{{ route('logout') }}"
-							onclick="event.preventDefault();
-														document.getElementById('logout-form').submit();">
-														<i class="fas fa-undo"></i>
-							 {{ __('Logout') }}
-					 </a>
-						<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-								@csrf
-						</form>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('artikel.index') }}">
+								<i class="fas fa-desktop"></i>
+								<p>Artikel</p>
+							</a>
+						</li>
+						<li class="nav-item">
+								<a  href="{{ route('logout') }}"
+									onclick="event.preventDefault();
+																document.getElementById('logout-form').submit();">
+																<i class="fas fa-undo"></i>
+									{{ __('Logout') }}
+								</a>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+										@csrf
+								</form>
 						</li>
 					</ul>
 				</div>

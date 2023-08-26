@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\LandingPageController;
+use App\Http\Controllers\ArtikelController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +19,7 @@ use App\Http\Controllers\KategoriController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend-home.frontend-home');
 });
 // Route::get('dashboard', function () {
 //     return view('back.dashboard-content');
@@ -25,8 +28,10 @@ Route::get('/', function () {
 
 
 Auth::routes();
+Route::resource('/', LandingPageController::class);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::resource('/kategori', KategoriController::class);
+Route::resource('/artikel', ArtikelController::class);
 
 
 

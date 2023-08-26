@@ -1,0 +1,96 @@
+.galeri-wrap {
+  margin-top: 100px;
+  border: 1px solid green;
+}
+
+.galeri-item {
+  padding-top: 20px;
+}
+
+.owl-dots {
+  padding-top: 30px;
+}
+
+
+.card-galeri {
+  aspect-ratio: 1 / 0.7;
+  border-radius: 8px;
+  position: relative;
+  border: 1px solid red;
+}
+
+.card-galeri .image-box {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.image-box {
+  justify-content: center;
+  left: 2.3%;
+  position: relative;
+}
+
+.card-galeri .image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 90%;
+  border-radius: inherit;
+  transition: 0.5s ease-in-out;
+}
+
+.card-galeri::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid white;
+  border-radius: inherit;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+}
+
+.card-galeri:hover img {
+  filter: grayscale(1) brightness(0.4);
+}
+
+.card-galeri:hover::after {
+  opacity: 1;
+  inset: 20px;
+}
+
+.content {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.content h2,
+.content p {
+  opacity: 0;
+  transition: 0.4s 0.2s ease;
+}
+
+.content h2 {
+  margin-bottom: 8px;
+  scale: 0.7;
+}
+
+.content p {
+  font-size: 14px;
+  color: #d1d1d1;
+  transform: translateY(50%);
+}
+
+.card-galeri:hover .content h2 {
+  scale: 1;
+  opacity: 1;
+}
+
+.card-galeri:hover .content P {
+  opacity: 1;
+  transform: translateY(0);
+}

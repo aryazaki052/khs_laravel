@@ -1,0 +1,159 @@
+/* Logo Navbar */
+.logo {
+  width: 180px;
+  margin-left: 50px;
+}
+
+/* Navbar Items */
+.navbarb {
+  gap: 25px;
+  margin-right: 30px;
+}
+
+.navbarb li a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: 'Lora', serif;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.wrap {
+  transition: color 0.3s ease;
+}
+
+.wrap:hover {
+  color: rgb(209, 140, 50);
+}
+
+.wrap::after {
+  content: '';
+  display: block;
+  width: 80%;
+  border: 1px solid rgb(209, 140, 50);
+  transform: translate(-150%);
+  transition: all 1s ease;
+}
+
+.wrap:hover::after {
+  transform: translate(150%);
+}
+
+/* Dropdown About Us */
+.navbar-light .navbar-nav .nav-link {
+  color: black;
+}
+
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  background-color: rgb(231, 227, 215);
+  border: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgb(173, 173, 173);
+}
+
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  z-index: 9999;
+  transition: background-color 1.8s ease;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.384);
+  background: linear-gradient(rgba(231, 228, 176, 0.8) 0%, rgba(195, 231, 111, 0) 90%);
+  top: 0;
+  /* border: 1px solid blue; */
+}
+
+/* Transparent Navbar */
+.navbar-transparent {
+  background-color: rgba(255, 255, 255, 0);
+}
+
+/* White Navbar */
+.navbar-white {
+  background-color: rgb(250, 246, 246);
+}
+
+/* Active Nav Item */
+.navbarb .nav-item.active a {
+  color: rgb(189, 171, 126);
+}
+
+.navbarb {
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+
+/* Media Query for Small Screens */
+@media screen and (max-width: 768px) {
+
+  /* Logo Navbar */
+  .logo {
+    margin-left: 20px;
+  }
+
+  /* Navbar Items */
+  .navbarb {
+    right: 20px;
+    gap: 40px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    /* Posisikan menu di sebelah kanan */
+    align-items: flex-start;
+    /* Pusatkan menu secara vertikal */
+  }
+
+  /* Responsive Navbar Background */
+  .navbara {
+    background-color: rgba(255, 255, 255, 0.842);
+    border-radius: 20px;
+  }
+
+  /* Dropdown */
+  .dropdown-menu {
+    position: static;
+    /* Ubah posisi menjadi static agar dropdown tetap tampil */
+    background-color: rgba(231, 228, 176, 0.8);
+    border: none;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.384);
+    margin: 0;
+    /* Hapus margin agar dropdown tidak terlalu jauh dari menu */
+  }
+
+  .dropdown-menu a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Lora', serif;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 10px 20px;
+    white-space: nowrap;
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: inherit;
+  }
+}
+
+@media screen and (max-width: 344px) {
+  .logo {
+    margin-left: 0px;
+  }
+}
