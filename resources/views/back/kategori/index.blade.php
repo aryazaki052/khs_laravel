@@ -13,9 +13,16 @@
 				<div class="card-header">
 					<div class="card-head-row">
 						<div class="card-title">Data Kategori</div>
+            <a href="{{ route('kategori.create') }}" class="btn btn-primary btn-sm ml-auto">Tambah Kategori</a>
 					</div>
 				</div>
 				<div class="card-body">
+          @if (session()->has('success'))
+          <div class="alert alert-primary">
+              {{ session('success') }}
+          </div>
+      @endif
+      
 					<div class="table-responsive">
 					<table class="table table-bordered">
             <thead>
@@ -32,7 +39,16 @@
                 <td>{{ $row->id }}</td>
                 <td>{{ $row->nama_kategori }}</td>
                 <td>{{ $row->slug }}</td>
-                <td></td>
+                <td>
+                  <a href="{{ route('kategori.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-pen"></i></a>
+                  <form action="{{ route('kategori.destroy', $row->id) }}" method="POST" class="d-inline">
+                    @csrf
+                    @method('delete')
+                    <button class="btn btn-danger btn-sm">
+                      <i class="fa fa-trash"> </i>
+                    </button>
+                  </form>
+                </td>
               </tr>
               @empty
               <tr>

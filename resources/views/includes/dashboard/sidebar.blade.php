@@ -71,7 +71,6 @@
 							<a href="{{ route('kategori.index') }}">
 								<i class="fas fa-desktop"></i>
 								<p>Kategori</p>
-								<span class="badge badge-success">4</span>
 							</a>
 							
 							<a  href="{{ route('logout') }}"
