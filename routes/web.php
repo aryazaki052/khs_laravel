@@ -37,3 +37,4 @@ Route::resource('/artikel', ArtikelController::class);
 
 
 
+

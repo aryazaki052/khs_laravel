@@ -26,26 +26,26 @@
 					<div class="table-responsive">
 					<table class="table table-bordered">
             <thead>
-              <tr>
-                <th>Id</th>
+              <tr class="text-center">
                 <th>Judul Artikel</th>
                 <th>Slug</th>
                 <th>Kategori</th>
+                <th>Gambar</th>
                 <th>Author</th>
-                <th>Action</th>
+                <th width="150px">Action</th>
               </tr>
             </thead>
             <tbody>
               @forelse ($artikel as $row)
               <tr>
-                <td>{{ $row->id }}</td>
                 <td>{{ $row->judul }}</td>
                 <td>{{ $row->slug }}</td>
                 <td>{{ $row->Kategori->nama_kategori }}</td>
+                <td><img src="{{ asset('uploads/' .$row->gambar_artikel) }}" width="100"></td>
                 <td>{{ $row->users->name }}</td>
                 <td>
-                  <a href="{{ route('kategori.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-pen"></i></a>
-                  <form action="{{ route('kategori.destroy', $row->id) }}" method="POST" class="d-inline">
+                  <a href="{{ route('artikel.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-pen"></i></a>
+                  <form action="{{ route('artikel.destroy', $row->id) }}" method="POST" class="d-inline">
                     @csrf
                     @method('delete')
                     <button class="btn btn-danger btn-sm">
