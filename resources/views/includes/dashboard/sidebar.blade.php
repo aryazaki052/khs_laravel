@@ -80,6 +80,12 @@
 							</a>
 						</li>
 						<li class="nav-item">
+							<a href="{{ route('slide.index') }}">
+								<i class="fas fa-desktop"></i>
+								<p>Slide</p>
+							</a>
+						</li>
+						<li class="nav-item">
 								<a  href="{{ route('logout') }}"
 									onclick="event.preventDefault();
 																document.getElementById('logout-form').submit();">

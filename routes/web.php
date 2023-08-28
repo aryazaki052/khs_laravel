@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ArtikelController;
+use App\Http\Controllers\SlideController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::resource('/', LandingPageController::class);
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::resource('/kategori', KategoriController::class);
 Route::resource('/artikel', ArtikelController::class);
+Route::resource('/slide', SlideController::class);
+
 
 
 

@@ -14,13 +14,23 @@ class ArtikelController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $artikel = artikel::all();
+        $kategori_id = $request->input('kategori_id'); // Mengambil parameter kategori_id dari URL
+    
+        $query = Artikel::query();
+    
+        if ($kategori_id) {
+            $query->where('kategori_id', $kategori_id);
+        }
+    
+        $artikel = $query->get();
+    
         return view('back.artikel.index', [
             'artikel' => $artikel
         ]);
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -38,18 +48,27 @@ class ArtikelController extends Controller
     {
         $this->validate($request, [
             'judul' => 'required|min:4',
+            'kategori_id' => 'required',
         ]);
-        
+    
         $data = $request->all();
         $data['slug'] = Str::slug($request->judul);
         $data['user_id'] = Auth::id();
         $data['views'] = 0;
+    
+        if ($request->kategori_id == 2) {
+            $data['file_dokumen'] = $request->file('dokumen')->store('dokumen'); // Jika kategori adalah "Pengumuman"
+        } else {
+            $data['file_dokumen'] = ''; // Jika kategori bukan "Pengumuman"
+        }
+    
         $data['gambar_artikel'] = $request->file('gambar_artikel')->store('artikel');
-
+    
         Artikel::create($data);
-
+    
         return redirect()->route('artikel.index')->with(['success' => 'Data Berhasil Disimpan']);
     }
+    
 
     /**
      * Display the specified resource.

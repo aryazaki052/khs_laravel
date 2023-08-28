@@ -41,7 +41,7 @@
                 <td>{{ $row->slug }}</td>
                 <td>
                   <a href="{{ route('kategori.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-pen"></i></a>
-                  <form action="{{ route('kategori.destroy', $row->id) }}" method="POST" class="d-inline">
+                  <form action="{{ route('kategori.destroy', $row->id) }}" method="POST" class="d-inline" onsubmit="return confirmDelete();">
                     @csrf
                     @method('delete')
                     <button class="btn btn-danger btn-sm">
@@ -65,5 +65,10 @@
 		</div>
 	</div>
 </div>
+<script>
+  function confirmDelete() {
+      return confirm("Apakah Anda yakin akan menghapusnya?");
+  }
+</script>
 @endsection
 

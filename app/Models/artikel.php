@@ -17,6 +17,7 @@ class artikel extends Model
         'kategori_id',
         'user_id',
         'gambar_artikel',
+        'file_dokumen',
         'is_active',
         'views',
         'body'

@@ -36,10 +36,15 @@
                 @endforeach
               </select>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="gambarFormGroup">
               <label for="gambar">Gambar Artikel</label>
-              <input type="file" name="gambar_artikel" class="form-control" ></input>
-            </div>
+              <input type="file" name="gambar_artikel" class="form-control">
+          </div>
+          <div class="form-group" id="dokumenFormGroup">
+            <label for="dokumen">Dokumen Pengumuman (doc, docx, pdf)</label>
+            <input type="file" name="dokumen" class="form-control" accept=".doc,.docx,.pdf">
+        </div>
+        
             <div class="form-group">
               <label for="status">Status</label>
               <select name="is_active" class="form-control" >
@@ -57,5 +62,25 @@
 		</div>
 	</div>
 </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const kategoriSelect = document.querySelector('select[name="kategori_id"]');
+    const dokumenFormGroup = document.getElementById('dokumenFormGroup');
+
+    kategoriSelect.addEventListener('change', function() {
+        if (this.value === '2') { // Ganti '2' dengan nilai ID kategori yang tepat
+            dokumenFormGroup.style.display = 'block';
+        } else {
+            dokumenFormGroup.style.display = 'none';
+        }
+
+        if (this.value === 'Pengumuman') { // Ganti 'Pengumuman' dengan nilai yang sesuai
+            dokumenFormGroup.style.display = 'block';
+        }
+    });
+});
+
+
+  </script>
 @endsection
 
