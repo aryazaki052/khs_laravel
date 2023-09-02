@@ -1,5 +1,11 @@
 		
-		
+		<style>
+			.sidebar .nav a.active {
+					background-color: rgb(216, 212, 212); /* Atur warna latar belakang sesuai kebutuhan */
+			}
+			
+	</style>
+	
 		<!-- Sidebar -->
 		<div class="sidebar sidebar-style-2">			
 			<div class="sidebar-wrapper scrollbar scrollbar-inner">
@@ -68,34 +74,47 @@
 							<h4 class="text-section">Components</h4>
 						</li>
 						<li class="nav-item">
-							<a href="{{ route('kategori.index') }}">
+							<a href="{{ route('kategori.index') }}" class="{{ Request::is('kategori*') ? 'active' : '' }} ">
 								<i class="fas fa-desktop"></i>
-								<p>Kategori</p>
+								<p >Kategori</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="{{ route('artikel.index') }}">
+							<a href="{{ route('artikel.index') }}" class="{{ Request::is('artikel*') ? 'active' : '' }}">
 								<i class="fas fa-desktop"></i>
 								<p>Artikel</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="{{ route('slide.index') }}">
+							<a href="{{ route('slide.index') }}" class="{{ Request::is('slide*') ? 'active' : '' }}">
 								<i class="fas fa-desktop"></i>
 								<p>Slide</p>
 							</a>
 						</li>
 						<li class="nav-item">
-								<a  href="{{ route('logout') }}"
-									onclick="event.preventDefault();
-																document.getElementById('logout-form').submit();">
-																<i class="fas fa-undo"></i>
-									{{ __('Logout') }}
-								</a>
+							<a href="{{ route('pengurus.index') }}" class="{{ Request::is('pengurus*') ? 'active' : '' }}">
+								<i class="fas fa-desktop"  class="{{ Request::is('pengurus*') ? 'active' : '' }}"></i>
+								<p  class="{{ Request::is('pengurus*') ? 'active' : '' }}">Kepengurusan</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('proker.index') }}" class="{{ Request::is('proker*') ? 'active' : '' }}">
+								<i class="fas fa-desktop"></i>
+								<p>Program Kerja</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('logout') }}"
+								 onclick="event.preventDefault();
+													 document.getElementById('logout-form').submit();">
+									<i class="fas fa-undo"></i>
+									<p>{{ __('Logout') }}</p>
+							</a>
 								<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
 										@csrf
 								</form>
-						</li>
+							
+					</li>
 					</ul>
 				</div>
 			</div>

@@ -51,5 +51,7 @@
 
   {{-- js --}}
   @include('includes.dashboard\jsdashboard')
+  @include('sweetalert::alert')
+
 </body>
 </html>

@@ -2,51 +2,33 @@
 @section('content')
  <!-- carousel -->
  <div class="carousel container-fluid" style="position: relative;">
-  <div class="row justify-content-center">
-      <div class="col-md-12">
-          <!-- Gambar-gambar slider -->
-          <img src="{{ asset('frontend/gambar/slider1.jpg') }}" alt="Gambar 1" class="active" />
-          <img src="{{ asset('frontend/gambar/slider2.jpg') }}" alt="Gambar 2" />
-          <img src="{{ asset('frontend/gambar/slider3.jpg') }}" alt="Gambar 3" />
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <!-- Gambar-gambar slider -->
+            @foreach($slides as $index => $slide)
+                <img src="{{ asset('uploads/' . $slide->gambar_slide) }}" alt="Slide {{ $index + 1 }}" class="{{ $index === 0 ? 'active' : '' }}" />
 
-          <!-- Keterangan untuk setiap gambar -->
-          <div class="carousel-item tulisan-slider">
-              <div class="container">
-                  <div class="row justify-content-center text-center">
-                      <div class="col-md-12 col-sm-12 ketslider">
-                          <div data-aos="fade-up">
-                              <h1 class="wow animate__animated animate__zoomInUp" data-wow-duration="2s">Tirta Yatra 2023</h1>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="carousel-item tulisan-slider">
-              <div class="container">
-                  <div class="row justify-content-center text-center">
-                      <div class="col-md-12 col-sm-12 ketslider">
-                          <h1 class="wow animate__animated animate__zoomInUp" data-wow-duration="2s">Ogoh - Ogoh 2023</h1>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="carousel-item tulisan-slider">
-              <div class="container">
-                  <div class="row justify-content-center text-center">
-                      <div class="col-md-12 col-sm-12 ketslider">
-                          <h1 class="wow animate__animated animate__zoomInUp" data-wow-duration="2s">Dharma Bhakti 2023</h1>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
+                <!-- Keterangan untuk setiap gambar -->
+                <div class="carousel-item tulisan-slider">
+                    <div class="container">
+                        <div class="row justify-content-center text-center">
+                            <div class="col-md-12 col-sm-12 ketslider">
+                                <h1 class="wow animate__animated animate__zoomInUp" data-wow-duration="2s">{{ $slide->judul_slide }}</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
 
-  <div class="carousel-indicators" style="display: flex; z-index: 1">
-      <span class="active" onclick="jumpToSlide(1)"></span>
-      <span onclick="jumpToSlide(2)"></span>
-      <span onclick="jumpToSlide(3)"></span>
-  </div>
+    <div class="carousel-indicators" style="display: flex; z-index: 1">
+        @foreach($slides as $index => $slide)
+            <span class="{{ $index === 0 ? 'active' : '' }}" onclick="jumpToSlide({{ $index + 1 }})"></span>
+        @endforeach
+    </div>
+</div>
+
 </div>
 
 <!-- highlight -->
@@ -70,45 +52,45 @@
                   <img src="{{ asset('frontend/gambar/shape.png') }}" alt="">
               </div>
           </div>
-      </div>
-  </div>
+        </div>
+    </div>
 </section>
 
 
 <!-- shotcut -->
 <section>
-  <div class="container shortcut">
-      <div class="row shortcut1 d-flex justify-content-center" data-aos="fade-up">
-          <div class="card-wrap col-md-4" data-aos="fade-right" data-aos-anchor="#example-anchor" data-aos-offset="1300"
-              data-aos-duration="2000" data-aos-delay="100" data-aos-once="true">
-              <div class="tilt-box-wrap">
+    <div class="container shortcut">
+        <div class="row shortcut1 d-flex justify-content-center" data-aos="fade-up">
+            <div class="card-wrap col-md-4" data-aos="fade-right" data-aos-anchor="#example-anchor" data-aos-offset="1300"
+            data-aos-duration="2000" data-aos-delay="100" data-aos-once="true">
+            <div class="tilt-box-wrap">
                   <div class="tilt-box">
                       <div class="card kartu-shortcut">
                           <i class="fa fa-bullseye icon-shortcut" aria-hidden="true"></i>
                           <div class="card-body">
                               <h5 class="card-title text-center">VISI MISI</h5>
                               <a href="index.html" class="btn btn-hover kartu-shortcut1">Selengkapnya</a>
-                          </div>
+                            </div>
                       </div>
                   </div>
-              </div>
-          </div>
-          <div class="card-wrap col-md-4" data-aos="flip-left" data-aos-anchor="#example-anchor" data-aos-offset="1300"
-              data-aos-duration="2000" data-aos-delay="100" data-aos-once="true">
-              <div class="tilt-box-wrap">
-                  <div class="tilt-box">
-                      <div class="card kartu-shortcut">
-                          <i class="fa fa-tasks icon-shortcut" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="card-wrap col-md-4" data-aos="flip-left" data-aos-anchor="#example-anchor" data-aos-offset="1300"
+            data-aos-duration="2000" data-aos-delay="100" data-aos-once="true">
+            <div class="tilt-box-wrap">
+                <div class="tilt-box">
+                    <div class="card kartu-shortcut">
+                        <i class="fa fa-tasks icon-shortcut" aria-hidden="true"></i>
                           <div class="card-body">
                               <h5 class="card-title text-center">PROGRAM KERJA</h5>
                               <a href="#" class="btn btn-hover kartu-shortcut1">Selengkapnya</a>
                           </div>
-                      </div>
-                  </div>
-              </div>
+                        </div>
+                    </div>
+                </div>
           </div>
           <div class="card-wrap col-md-4 " data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="1300"
-              data-aos-duration="2000" data-aos-delay="100" data-aos-once="true">
+          data-aos-duration="2000" data-aos-delay="100" data-aos-once="true">
               <div class="tilt-box-wrap">
                   <div class="tilt-box">
                       <div class="card kartu-shortcut">
@@ -118,186 +100,64 @@
                               <a href="#" class="btn btn-hover kartu-shortcut1">Selengkapnya</a>
                           </div>
                       </div>
-                  </div>
+                    </div>
               </div>
           </div>
       </div>
-  </div>
+    </div>
 </section>
 
+<!-- galery -->
 <!-- kepengurusan -->
 <!-- pastikan ukuran foto 1061px x 689  -->
 <section id="slider" class="pt-5">
-  <div class="container-fluid kepengurusan-wrap">
-      <div class="container kepengurusan">
-          <h1 class="text-center"><b>KEPENGURUSAN</b></h1>
-          <div class="slider">
-              <div class="owl-carousel">
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>I Gusti Putu Arya Zaki Yoga Pratama</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
-                  <div class="slider-card">
-                      <div class="d-flex justify-content-center align-items-center mb-4">
-                          <img src="{{ asset('frontend/gambar/pengurus/profile.png') }}" alt="">
-                      </div>
-                      <h6 class="mb-0 text-center"><b>Nama Lengkap</b></h6>
-                      <p class="text-center">Jabatan</p>
-                  </div>
+    <div class="container-fluid kepengurusan-wrap">
+        <div class="container galeri-wrap">
+          <div class="teks-galeri text-center">
+              <h1>PROGRAM KERJA</h1>
+          </div>
+          <div class="row galeri-item">
+              <div class="owl-carousel owl-theme owl-dots">
+                @foreach ($proker as $prokers)
+                <div class="card-galeri" style="display: flex; justify-content: center; align-items: center;">
+                    <div class="image-box">
+                        <img src="{{ asset('uploads/' . $prokers->gambar_proker) }}">
+                    </div>
+                    <div class="content">
+                        <h2>{{ $prokers->nama_proker }}</h2>
+                        <p>{{ $prokers->keterangan_proker }}</p>
+                    </div>
+                </div>
+                @endforeach
               </div>
           </div>
-      </div>
-  </div>
+        </div>
+    </div>
 </section>
-<!-- akhir kepengurusan -->
+<!-- akhir gallery -->
 
-<!-- galery -->
-<div class="container galeri-wrap">
-  <div class="teks-galeri text-center">
-      <h1>PROGRAM KERJA</h1>
-  </div>
-  <div class="row galeri-item">
-      <div class="owl-carousel owl-theme owl-dots">
-          <div class="card-galeri" style="display: flex; justify-content: center; align-items: center;">
-              <div class="image-box">
-                  <img src="{{ asset('frontend/gambar/proker/dummy.png') }}">
+
+<br><br><br>
+
+<!-- kepengurusan -->
+<!-- pastikan ukuran foto 1061px x 689  -->
+<div class="container kepengurusan">
+    <h1 class="text-center"><b>KEPENGURUSAN</b></h1>
+    <div class="slider">
+        <div class="owl-carousel">
+            @foreach ($pengurus as $pengurusItem)
+            <div class="slider-card">
+              <div class="d-flex justify-content-center align-items-center mb-4">
+                  <img src="{{ asset('uploads/' . $pengurusItem->gambar_pengurus) }}" alt="">
               </div>
-              <div class="content">
-                  <h2>Judul</h2>
-                  <p>Keterangan</p>
-              </div>
+              <h6 class="mb-0 text-center"><b>{{ $pengurusItem->nama_pengurus }}</b></h6>
+              <p class="text-center">{{ $pengurusItem->jabatan }}</p>
           </div>
-          <div class="card-galeri">
-              <div class="image-box">
-                  <img src="{{ asset('frontend/gambar/proker/dummy.png') }}">
-              </div>
-              <div class="content">
-                  <h2>Judul</h2>
-                  <p>Keterangan</p>
-              </div>
-          </div>
-          <div class="card-galeri">
-              <div class="image-box">
-                  <img src="{{ asset('frontend/gambar/proker/dummy.png') }}">
-              </div>
-              <div class=" content">
-                  <h2>Judul</h2>
-                  <p>Keterangan</p>
-              </div>
-          </div>
-          <div class="card-galeri">
-              <div class="image-box">
-                  <img src="{{ asset('frontend/gambar/proker/dummy.png') }}">
-              </div>
-              <div class="content">
-                  <h2>Judul</h2>
-                  <p>Keterangan</p>
-              </div>
-          </div>
+          @endforeach
       </div>
   </div>
 </div>
-<!-- akhir gallery -->
+<!-- akhir kepengurusan -->
+
     
 @endsection

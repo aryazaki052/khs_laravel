@@ -24,7 +24,7 @@
               <input type="text" name="judul_slide" class="form-control" id="text" placeholder="Masukan Judul">
             </div>
             <div class="form-group">
-              <label for="gambar">Gambar Slide</label>
+              <label for="gambar">Gambar Slide (*ukuran 1080px x 608px)</label>
               <input type="file" name="gambar_slide" class="form-control" ></input>
             </div>
             <div class="form-group">

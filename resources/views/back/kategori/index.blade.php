@@ -41,13 +41,34 @@
                 <td>{{ $row->slug }}</td>
                 <td>
                   <a href="{{ route('kategori.edit', $row->id) }}" class="btn btn-warning btn-sm"><i class="fa fa-pen"></i></a>
-                  <form action="{{ route('kategori.destroy', $row->id) }}" method="POST" class="d-inline" onsubmit="return confirmDelete();">
-                    @csrf
-                    @method('delete')
-                    <button class="btn btn-danger btn-sm">
-                      <i class="fa fa-trash"> </i>
-                    </button>
-                  </form>
+                  <!-- Tombol Trash -->
+              <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#confirmDeleteModal">
+                <i class="fa fa-trash"></i>
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmDeleteModalLabel">Confirm Deletion</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="{{ route('kategori.destroy', $row->id) }}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <label for="password">Enter your password:</label>
+                                <input type="password" name="password" id="password" required>
+                                <button type="submit" class="btn btn-danger btn-sm">Confirm Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+              </div>
+
                 </td>
               </tr>
               @empty

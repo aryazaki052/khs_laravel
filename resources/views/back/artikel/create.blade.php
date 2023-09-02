@@ -25,7 +25,7 @@
             </div>
             <div class="form-group">
               <label for="body">body</label>
-              <textarea name="body" class="form-control" ></textarea>
+              <textarea name="body" id="editor" class="form-control" ></textarea>
             </div>
             <div class="form-group">
               <label for="kategori">kategori</label>
@@ -79,8 +79,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
-
-
   </script>
+
+
+<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+<script>
+  ClassicEditor
+      .create( document.querySelector( '#editor' ) )
+      .catch( error => {
+          console.error( error );
+      } );
+</script>
+
+
+
 @endsection
 

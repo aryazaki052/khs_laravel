@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class ArtikelController extends Controller
 {
@@ -65,8 +67,8 @@ class ArtikelController extends Controller
         $data['gambar_artikel'] = $request->file('gambar_artikel')->store('artikel');
     
         Artikel::create($data);
-    
-        return redirect()->route('artikel.index')->with(['success' => 'Data Berhasil Disimpan']);
+        Alert::success('Yeyyy', 'Data Berhasil Disimpan');
+        return redirect()->route('artikel.index');
     }
     
 
@@ -106,7 +108,8 @@ class ArtikelController extends Controller
                 'is_active'=> $request->is_active,
                 'user_id' => Auth::id()
             ]);
-            return redirect()->route('artikel.index')->with(['success' => 'Data Berhasil Di Update']); 
+            Alert::info('Yeyyy', 'Data Berhasil Di Update');
+            return redirect()->route('artikel.index'); 
         }else{
             $artikel = Artikel::find($id);
             $artikel->update([
@@ -119,7 +122,9 @@ class ArtikelController extends Controller
                 'user_id' => Auth::id(),
                 'gambar_artikel' => $request->file('gambar_artikel')->store('artikel')
             ]);
-            return redirect()->route('artikel.index')->with(['success' => 'Data Berhasil Di Update']);
+            Alert::info('Yeyyy', 'Data Berhasil Di Update');
+
+            return redirect()->route('artikel.index');
         }
 
         

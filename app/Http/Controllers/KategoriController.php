@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Kategori;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class KategoriController extends Controller
 {
@@ -76,11 +77,26 @@ class KategoriController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request, string $id)
     {
         $kategori = Kategori::find($id);
+
+    // Validasi developer password
+    $password = $request->input('password');
+    $developerPassword = config('app.developer_password'); // Mengambil nilai dari konfigurasi
+
+    if ($password != $developerPassword) {
+        Alert::error('Upss', 'Password Salah');
+        return redirect()->route('kategori.index');
+    }else{
         $kategori -> delete();
         return redirect()->route('kategori.index')->with(['success' => 'Data Berhasil Dihapus']);
+    }
+
+
+        // $kategori = Kategori::find($id);
+        // $kategori -> delete();
+        // return redirect()->route('kategori.index')->with(['success' => 'Data Berhasil Dihapus']);
 
     }
 }

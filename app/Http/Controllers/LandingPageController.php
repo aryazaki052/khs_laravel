@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pengurus;
+use App\Models\Proker;
+use App\Models\Slide;
 use Illuminate\Http\Request;
 
 class LandingPageController extends Controller
@@ -11,8 +14,12 @@ class LandingPageController extends Controller
      */
     public function index()
     {
-        return view('frontend.content-home');
+        $slides = Slide::all();
+        $pengurus = Pengurus::all();
+        $proker = Proker::all();
+        return view('frontend.content-home', compact('slides', 'pengurus', 'proker'));
     }
+    
 
     /**
      * Show the form for creating a new resource.
