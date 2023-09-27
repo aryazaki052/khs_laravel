@@ -34,6 +34,7 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 Route::resource('/', LandingPageController::class);
+Route::get('/berita/{id}', 'BeritaController@show')->name('berita.show');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -42,6 +43,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/slide', SlideController::class);
     Route::resource('/pengurus', PengurusController::class);
     Route::resource('/proker', prokerController::class);
+    
+
 });
 
 

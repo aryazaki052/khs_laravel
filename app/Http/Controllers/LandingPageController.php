@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\artikel;
 use App\Models\Pengurus;
 use App\Models\Proker;
 use App\Models\Slide;
@@ -17,7 +18,9 @@ class LandingPageController extends Controller
         $slides = Slide::all();
         $pengurus = Pengurus::all();
         $proker = Proker::all();
-        return view('frontend.content-home', compact('slides', 'pengurus', 'proker'));
+        $artikel = artikel::all();
+        $artikel = Artikel::orderBy('created_at', 'desc')->get();
+        return view('frontend.content-home', compact('slides', 'pengurus', 'proker', 'artikel'));
     }
     
 

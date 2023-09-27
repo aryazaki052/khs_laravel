@@ -28,8 +28,8 @@
         @endforeach
     </div>
 </div>
+{{-- akhir carousel --}}
 
-</div>
 
 <!-- highlight -->
 <section id="highlight">
@@ -55,7 +55,7 @@
         </div>
     </div>
 </section>
-
+{{-- akhir highlight --}}
 
 <!-- shotcut -->
 <section>
@@ -106,10 +106,9 @@
       </div>
     </div>
 </section>
+{{-- akhir shortcut --}}
 
 <!-- galery -->
-<!-- kepengurusan -->
-<!-- pastikan ukuran foto 1061px x 689  -->
 <section id="slider" class="pt-5">
     <div class="container-fluid kepengurusan-wrap">
         <div class="container galeri-wrap">
@@ -159,5 +158,39 @@
 </div>
 <!-- akhir kepengurusan -->
 
+
+{{-- berita --}}
+<!-- berita terkini -->
+	<div class="container" style="margin-top: 40px;">
+		<div class="" style="align-items: center;">
+			<div class="berita_terkini" style=" margin-right: 0; padding-right: 0px;">
+				<h1>Berita Terkini</h1>
+				<span class="border_berita"></span>
+			</div>
+			<div>
+				<h6><a href="">Semua Berita</a></h6>
+			</div>
+		</div>
+		<div class="row justify-content-center berita">
+            @foreach ($artikel->take(4) as $berita)
+    <div class="col-lg-3 col-md-3 kotak-berita">
+        <div class="card img-hover-zoom" style="width: 18rem;">
+            <div class="">
+                <img src="{{ asset('uploads/' . $berita->gambar_artikel) }}" class="card-img-top" alt="...">
+            </div>
+            <div class="card-body link-berita">
+                <h5 class="card-title">{{ $berita->judul }}</h5>
+                <p class="card-text truncated-text">
+                    {{ $berita->body }}
+                </p>
+                <a href="{{ route('berita.show', ['id' => $berita->id]) }}" class="btn">Selengkapnya</a>
+            </div>
+        </div>
+    </div>        
+@endforeach
+
+        
+		</div>
+	</div>
     
 @endsection
