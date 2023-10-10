@@ -49,11 +49,7 @@
         @include('frontend.navbar')
         {{-- navbar end --}}
         
-        {{-- content --}}
-        <div class="kontent-home">
-           @yield('content')
-        </div>
-        {{-- end content --}}
+
     
         <!-- jarak -->
         <div>

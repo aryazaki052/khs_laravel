@@ -8,8 +8,10 @@ use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\PengurusController;
+use App\Http\Controllers\profilController;
 use App\Http\Controllers\prokerController;
 use App\Http\Controllers\SlideController;
+use App\Http\Controllers\tentangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,9 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::resource('/', LandingPageController::class);
+
+Route::get('/', [LandingPageController::class, 'index'])->name('frontend.content-home');
+Route::get('/profil/tentang', [tentangController::class, 'index'])->name('frontend.profil.tentang');
 Route::get('/berita/{id}', 'BeritaController@show')->name('berita.show');
 
 Route::group(['middleware' => 'auth'], function () {

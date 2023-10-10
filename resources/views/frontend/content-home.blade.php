@@ -113,7 +113,7 @@
     <div class="container-fluid kepengurusan-wrap">
         <div class="container galeri-wrap">
           <div class="teks-galeri text-center">
-              <h1>PROGRAM KERJA</h1>
+              <h1 style=" font-family: 'Patua One', cursive;">PROGRAM KERJA</h1>
           </div>
           <div class="row galeri-item">
               <div class="owl-carousel owl-theme owl-dots">
@@ -168,7 +168,9 @@
 				<span class="border_berita"></span>
 			</div>
 			<div>
-				<h6><a href="">Semua Berita</a></h6>
+                <h6>
+                    <a href="" class="semua_berita">Semua Berita</a>
+                </h6>
 			</div>
 		</div>
 		<div class="row justify-content-center berita">
@@ -183,7 +185,7 @@
                 <p class="card-text truncated-text">
                     {{ $berita->body }}
                 </p>
-                <a href="{{ route('berita.show', ['id' => $berita->id]) }}" class="btn">Selengkapnya</a>
+                <a href="{{ route('berita.show', ['id' => $berita->id]) }}" class="btn ">Selengkapnya</a>
             </div>
         </div>
     </div>        
