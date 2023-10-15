@@ -9,7 +9,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="{{ asset('frontend/navbar/navbar.css') }}">
 	<link rel="stylesheet" href="{{ asset('frontend/index/index.css') }}">
-	<link rel="stylesheet" href="{{ asset('frontend/galeri/galeri.css') }}">
+	<link rel="stylesheet" href="{{ asset('frontend/profil/tentang/tentang.css') }}">
 	<!-- bootstrap -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
@@ -26,19 +26,6 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         {{-- font navbar --}}
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
-		<!-- font  highlight -->
-		<link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Kaushan+Script&display=swap"
-			rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
-		<!-- font shortcut -->
-		<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
-        {{-- font galeri proker --}}
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand&family=Young+Serif&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap" rel="stylesheet">
-		<!-- font kepengurusan -->
-		<link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Dai+Banna+SIL:wght@300&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
 	</div>
 
 </head>
@@ -48,7 +35,17 @@
         <!-- navbar -->
         @include('frontend.navbar')
         {{-- navbar end --}}
-        
+
+        {{-- gambar atas --}}
+        <div class="">
+            <div class="gambar-atas">
+            </div>
+        </div>
+        {{-- end gambar atas --}}
+
+
+
+
 
     
         <!-- jarak -->
