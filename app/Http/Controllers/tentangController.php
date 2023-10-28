@@ -11,7 +11,7 @@ class tentangController extends Controller
      */
     public function index()
     {
-        return view('frontend.profil.tentang');
+        return view('frontend.profil.tentang.tentang');
     }
 
     /**
