@@ -5,16 +5,14 @@ namespace App\Http\Controllers;
 use App\Models\artikel;
 use Illuminate\Http\Request;
 
-class tentangController extends Controller
+class detailberitaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $artikel = artikel::all();
         $artikel = Artikel::orderBy('created_at', 'desc')->get();
-        return view('frontend.profil.tentang.tentang', compact('artikel'));
+        
+        return view('frontend.berita.detail', compact('artikel'));
     
     }
 
@@ -37,9 +35,10 @@ class tentangController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $artikel = Artikel::find($id);
+        return view('frontend.berita.detail', compact('artikel'));
     }
 
     /**

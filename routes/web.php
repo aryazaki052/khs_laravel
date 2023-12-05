@@ -7,11 +7,14 @@ use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LandingPageController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\beritaController;
+use App\Http\Controllers\detailberitaController;
 use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\profilController;
 use App\Http\Controllers\prokerController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\tentangController;
+use App\Http\Controllers\visiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +41,12 @@ Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/', [LandingPageController::class, 'index'])->name('frontend.content-home');
 Route::get('/profil/tentang', [tentangController::class, 'index'])->name('frontend.profil.tentang');
-Route::get('/berita/{id}', 'BeritaController@show')->name('berita.show');
+Route::get('/profil/visi', [visiController::class, 'index'])->name('frontend.profil.visi');
+Route::get('/berita/berita', [beritaController::class, 'index'])->name('frontend.berita.berita');
+Route::get('/berita/berita/{id}', [detailberitaController::class, 'show'])->name('frontend.berita.detail');
+
+
+
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

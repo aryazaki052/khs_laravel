@@ -180,12 +180,12 @@
             <div class="">
                 <img src="{{ asset('uploads/' . $berita->gambar_artikel) }}" class="card-img-top" alt="...">
             </div>
-            <div class="card-body link-berita">
+            <div class="card-body link-berita text-center">
                 <h5 class="card-title">{{ $berita->judul }}</h5>
                 <p class="card-text truncated-text">
                     {{ $berita->body }}
                 </p>
-                <a href="{{ route('berita.show', ['id' => $berita->id]) }}" class="btn ">Selengkapnya</a>
+                <a href="{{ route('frontend.berita.detail', ['id' => $berita->id]) }}" class="btn ">Selengkapnya</a>
             </div>
         </div>
     </div>        

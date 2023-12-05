@@ -5,16 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\artikel;
 use Illuminate\Http\Request;
 
-class tentangController extends Controller
+class visiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $artikel = artikel::all();
         $artikel = Artikel::orderBy('created_at', 'desc')->get();
-        return view('frontend.profil.tentang.tentang', compact('artikel'));
+        return view('frontend.profil.visi.index', compact('artikel'));
     
     }
 

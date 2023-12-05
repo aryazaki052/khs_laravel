@@ -24,21 +24,21 @@
                 </div>
                 <div class="dropdown-margin">
                     <ul class="dropdown-menu overflow" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item{{ request()->is('profil/tentang') ? ' active' : '' }}" href="{{ route('frontend.profil.tentang') }} " style="background-color: rgba(255,255,255,255);">Tentang KHS</a>
-                        {{-- <a class="dropdown-item{{ request()->is('profil/visi-misi*') ? ' active' : '' }}" href="{{ route('visi-misi.index') }}">Visi Misi</a>
-                        <a class="dropdown-item{{ request()->is('profil/program-kerja*') ? ' active' : '' }}" href="{{ route('program-kerja.index') }}">Program Kerja</a>
+                        <a class="dropdown-item{{ request()->is('profil/tentang*') ? ' active' : '' }}" href="{{ route('frontend.profil.tentang') }} " style="background-color: rgba(255,255,255,255);">Tentang KHS</a>
+                        <a class="dropdown-item{{ request()->is('profil/visi-misi*') ? ' active' : '' }}" href="{{ route('frontend.profil.visi') }}">Visi Misi</a>
+                        {{-- <a class="dropdown-item{{ request()->is('profil/program-kerja*') ? ' active' : '' }}" href="{{ route('program-kerja.index') }}">Program Kerja</a>
                         <a class="dropdown-item{{ request()->is('profil/mars-hymne*') ? ' active' : '' }}" href="{{ route('mars-hymne.index') }}">Mars & Hymne</a> --}}
                     </ul>
                 </div>
-            </li>
+                </li>
             
               <!-- End of Dropdown About Us -->
-              <li class="overflow {{ request()->is('berita*') ? ' active' : '' }}">
-                  <a href="#" class="wrap">Berita</a>
-              </li>
-              <li class="overflow {{ request()->is('kontak*') ? ' active' : '' }}">
-                  <a href="#" class="wrap">Kontak</a>
-              </li>
+                <li class="overflow {{ request()->is('berita/berita*') ? ' active' : '' }}">
+                    <a href="{{ route('frontend.berita.berita') }}" class="wrap">Berita</a>
+                </li>            
+                <li class="overflow {{ request()->is('kontak*') ? ' active' : '' }}">
+                    <a href="#" class="wrap">Kontak</a>
+                </li>
           </ul>
       </div>
   </div>
