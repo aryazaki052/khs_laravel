@@ -38,7 +38,14 @@ class detailberitaController extends Controller
     public function show($id)
     {
         $artikel = Artikel::find($id);
-        return view('frontend.berita.detail', compact('artikel'));
+
+
+        $kategoriId = $artikel->kategori->id ?? null; // Mengambil ID kategori artikel
+
+        return view('frontend.berita.detail', [
+            'artikel' => $artikel,
+            'kategoriId' => $kategoriId, // Mengirim ID kategori ke view
+        ]);
     }
 
     /**

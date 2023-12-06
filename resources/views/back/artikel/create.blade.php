@@ -85,7 +85,11 @@ document.addEventListener('DOMContentLoaded', function() {
 <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 <script>
   ClassicEditor
-      .create( document.querySelector( '#editor' ) )
+  .create(document.querySelector('#editor'), {
+        alignment: {
+            options: ['left', 'right', 'justify'] // Default alignment options
+        }
+    })
       .catch( error => {
           console.error( error );
       } );

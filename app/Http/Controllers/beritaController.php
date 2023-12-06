@@ -7,14 +7,31 @@ use Illuminate\Http\Request;
 
 class beritaController extends Controller
 {
-    public function index()
-    {
-        $artikel = artikel::all();
-        $artikel = Artikel::orderBy('created_at', 'desc')->get();
+    // public function index()
+    // {
+    //     $artikel = artikel::all();
+    //     $artikel = Artikel::orderBy('created_at', 'desc')->get();
         
-        return view('frontend.berita.berita', compact('artikel'));
+    //     return view('frontend.berita.berita', compact('artikel'));
     
+    // }
+    public function index(Request $request)
+    {
+        $kategori_id = $request->input('kategori_id'); // Mengambil parameter kategori_id dari URL
+    
+        $query = Artikel::query();
+    
+        if ($kategori_id) {
+            $query->where('kategori_id', $kategori_id);
+        }
+    
+        $artikel = $query->orderBy('created_at', 'desc')->get();
+    
+        return view('frontend.berita.berita', [
+            'artikel' => $artikel
+        ]);
     }
+    
 
     /**
      * Show the form for creating a new resource.

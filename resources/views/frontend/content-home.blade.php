@@ -169,7 +169,7 @@
 			</div>
 			<div>
                 <h6>
-                    <a href="" class="semua_berita">Semua Berita</a>
+                    <a href="{{ route('frontend.berita.berita') }}" class="semua_berita">Semua Berita</a>
                 </h6>
 			</div>
 		</div>
@@ -183,7 +183,7 @@
             <div class="card-body link-berita text-center">
                 <h5 class="card-title">{{ $berita->judul }}</h5>
                 <p class="card-text truncated-text">
-                    {{ $berita->body }}
+                    {{ \Illuminate\Support\Str::limit(str_replace('&nbsp;', ' ', strip_tags($berita->body)), 200) }}
                 </p>
                 <a href="{{ route('frontend.berita.detail', ['id' => $berita->id]) }}" class="btn ">Selengkapnya</a>
             </div>

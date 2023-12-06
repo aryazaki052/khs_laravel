@@ -1,0 +1,78 @@
+.gambar-atas {
+  background-color: rgba(183, 176, 176, 0.74);
+  width: 100.9%;
+  position: relative;
+  top: 100px;
+  /* object-fit: cover;
+  background-size: cover;
+  filter: brightness(40%) opacity(70%); */
+}   
+.ro{
+  display: flex;
+  flex-direction: row;
+}
+
+.tanggal{
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* top: 200px; Atur sesuai kebutuhan Anda */
+}
+
+.judul_tentang {
+  justify-content: left;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  /* top: 200px; Atur sesuai kebutuhan Anda */
+  /* left: 0;
+  right: 0; */
+}
+
+.content{
+  margin-top: 20px;
+}
+
+.tentang{
+  height: fit-content;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px rgba(135, 131, 131, 0.591);
+}
+
+.gambar{
+  position: relative;
+  top: 150px;
+}
+.gambar-berita{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.gambar-berita h4{
+  margin-top: 20px;
+  width: 80%;
+}
+.gambar-berita a{
+  text-decoration: none;
+  color: rgb(0, 72, 255);
+}
+.deskripsi
+{
+  font-size: 20px;
+  line-height: 35px;
+  width: 100%; /* Atur lebar textarea agar tidak terlalu panjang */
+    max-width: 100%; /* Tetapkan lebar maksimum agar sesuai dengan kontainer */
+  /* text-align: left; */
+}
+@media (max-width: 576px) {
+  .ro {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+  }
+}

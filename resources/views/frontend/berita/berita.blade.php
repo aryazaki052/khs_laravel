@@ -59,16 +59,29 @@
             </div>
         </div>        
     @endforeach --}}
+    <div class="container">
+        <div class="dropdown" style=" width:fit-content">
+            <button id="filterDropdown" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-id="0">
+                Filter Kategori
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{{ route('frontend.berita.berita') }}">Semua Artikel</a></li>
+                <li><a class="dropdown-item" href="{{ route('frontend.berita.berita', ['kategori_id' => 3]) }}" data-id="3">Berita</a></li>
+                <li><a class="dropdown-item" href="{{ route('frontend.berita.berita', ['kategori_id' => 2]) }}" data-id="2">Pengumuman</a></li>
+            </ul>
+          </div>
+    </div>
         <div class="container">
           @foreach ($artikel as $berita)
           <div class="row" style="margin-top: 20px">
-            <div class="col-4">
+            <div class="col-md-4">
               <img src="{{ asset('uploads/' . $berita->gambar_artikel) }}" alt="" width="350px">
             </div>
-            <div class="col-8">
+            <div class="col-md-8">
              <h4>{{ $berita->judul }}</h4>
              <p>{{ $berita->created_at->format('d F Y') }}</p>
-             <p class="truncated-text">{{ $berita->body }}</p>
+             <p class="truncated-text">{{ \Illuminate\Support\Str::limit(str_replace('&nbsp;', ' ', strip_tags($berita->body)), 200) }}
+            </p>
              <button type="button" class="btn btn-warning">
                 <a href="{{ route('frontend.berita.detail', ['id' => $berita->id]) }}" style="text-decoration:none; color:black;">Selengkapnya</a>
              </button>
