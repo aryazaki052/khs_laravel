@@ -71,20 +71,17 @@
                     <!-- Kolom kedua (Berita) -->
                         <div class=" justify-content-center berita d-flex flex-column align-items-center">
                             @foreach ($artikel-> take(6)  as $berita)
-                    <div class="" style="margin-bottom: 10px;">
-                        <div class="card img-hover-zoom" style="width: 18rem; border-radius: 20px 20px 20px 20px;">
+                    <div class="berita1" style="margin-bottom: 10px;">
+                        <div class="card img-hover-zoom " style="width: 18rem; border-radius: 20px 20px 20px 20px;">
                             <div class="">
                                 <img src="{{ asset('uploads/' . $berita->gambar_artikel) }}" class="card-img-top" alt="...">
                             </div>
                             <div class="card-body link-berita text-center">
                                 <a href="{{ route('frontend.berita.detail', ['id' => $berita->id]) }}" class="btn "> <p class="card-title text-center">{{ $berita->judul }}</p></a>
-                               
                             </div>
                         </div>
                     </div>        
                 @endforeach
-
-                        
                         </div>
                 </div>
             </div>

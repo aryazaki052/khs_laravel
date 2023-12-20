@@ -12,19 +12,19 @@
 				<div class="sidebar-content">
 					<div class="user">
 						<div class="avatar-sm float-left mr-2">
-							<img src="../assets/img/profile.jpg" alt="..." class="avatar-img rounded-circle">
+							<img src="{{ asset('back/profil.jpg') }}" alt="..." class="avatar-img rounded-circle">
 						</div>
 						<div class="info">
 							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
 								<span>
-									Hizrian
-									<span class="user-level">Administrator</span>
-									<span class="caret"></span>
+									Arya Zaki
+									<span class="user-level">Admin</span>
+									{{-- <span class="caret"></span> --}}
 								</span>
 							</a>
 							<div class="clearfix"></div>
 
-							<div class="collapse in" id="collapseExample">
+							{{-- <div class="collapse in" id="collapseExample">
 								<ul class="nav">
 									<li>
 										<a href="#profile">
@@ -42,17 +42,17 @@
 										</a>
 									</li>
 								</ul>
-							</div>
+							</div> --}}
 						</div>
 					</div>
 					<ul class="nav nav-primary">
-						<li class="nav-item active">
-							<a data-toggle="collapse" href="#dashboard" class="collapsed" aria-expanded="false">
+						<li class="nav-item">
+							<a  href="{{ route('dashboard') }}"  aria-expanded="false"  class="{{ Request::is('dashboard*') ? 'active' : '' }}">
 								<i class="fas fa-home"></i>
 								<p>Dashboard</p>
-								<span class="caret"></span>
+								{{-- <span class="caret"></span> --}}
 							</a>
-							<div class="collapse" id="dashboard">
+							{{-- <div class="collapse" id="dashboard">
 								<ul class="nav nav-collapse">
 									<li>
 										<a href="../demo1/index.html">
@@ -65,13 +65,13 @@
 										</a>
 									</li>
 								</ul>
-							</div>
+							</div> --}}
 						</li>
 						<li class="nav-section">
 							<span class="sidebar-mini-icon">
 								<i class="fa fa-ellipsis-h"></i>
 							</span>
-							<h4 class="text-section">Components</h4>
+							<h4 class="text-section">Menu</h4>
 						</li>
 						<li class="nav-item">
 							<a href="{{ route('kategori.index') }}" class="{{ Request::is('kategori*') ? 'active' : '' }} ">
@@ -101,6 +101,12 @@
 							<a href="{{ route('proker.index') }}" class="{{ Request::is('proker*') ? 'active' : '' }}">
 								<i class="fas fa-desktop"></i>
 								<p>Program Kerja</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ route('saran.index') }}" class="{{ Request::is('saran*') ? 'active' : '' }}">
+								<i class="fas fa-desktop"></i>
+								<p>Saran</p>
 							</a>
 						</li>
 						<li class="nav-item">

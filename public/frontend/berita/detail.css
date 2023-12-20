@@ -1,6 +1,6 @@
 .gambar-atas {
   background-color: rgba(183, 176, 176, 0.74);
-  width: 100.9%;
+  /* width: 100.9%; */
   position: relative;
   top: 100px;
   /* object-fit: cover;
@@ -57,6 +57,9 @@
   margin-top: 20px;
   width: 80%;
 }
+.gambar-berita img{
+  width: 100%;
+}
 .gambar-berita a{
   text-decoration: none;
   color: rgb(0, 72, 255);
@@ -69,10 +72,19 @@
     max-width: 100%; /* Tetapkan lebar maksimum agar sesuai dengan kontainer */
   /* text-align: left; */
 }
+@media (max-width: 768px) {
+  .gambar-berita img{
+    width: 100%;
+  }
+}
 @media (max-width: 576px) {
   .ro {
     display: flex;
     flex-direction: row;
     gap: 5px;
+  }
+
+  .gambar-berita img{
+    width: 99%;
   }
 }

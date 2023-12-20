@@ -9,9 +9,11 @@ use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\beritaController;
 use App\Http\Controllers\detailberitaController;
+use App\Http\Controllers\kontakController;
 use App\Http\Controllers\PengurusController;
 use App\Http\Controllers\profilController;
 use App\Http\Controllers\prokerController;
+use App\Http\Controllers\SaranController;
 use App\Http\Controllers\SlideController;
 use App\Http\Controllers\tentangController;
 use App\Http\Controllers\visiController;
@@ -43,6 +45,8 @@ Route::get('/', [LandingPageController::class, 'index'])->name('frontend.content
 Route::get('/profil/tentang', [tentangController::class, 'index'])->name('frontend.profil.tentang');
 Route::get('/profil/visi', [visiController::class, 'index'])->name('frontend.profil.visi');
 Route::get('/berita/berita', [beritaController::class, 'index'])->name('frontend.berita.berita');
+Route::get('/kontak', [kontakController::class, 'index'])->name('frontend.kontak.kontak');
+Route::post('/kontak', [kontakController::class, 'store'])->name('kontak.store');
 Route::get('/berita/berita/{id}', [detailberitaController::class, 'show'])->name('frontend.berita.detail');
 
 
@@ -55,6 +59,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/slide', SlideController::class);
     Route::resource('/pengurus', PengurusController::class);
     Route::resource('/proker', prokerController::class);
+    Route::get('/admin/saran', [SaranController::class, 'index'])->name('saran.index');
     
 
 });

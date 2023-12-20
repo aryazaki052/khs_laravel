@@ -51,7 +51,7 @@
         </div>
         <div class="container gambar">
           <div class="gambar-berita">
-            <img src="{{ asset('uploads/' . $artikel->gambar_artikel) }}" width="1000px">
+            <img src="{{ asset('uploads/' . $artikel->gambar_artikel) }}">
             <h4 style="text-align: center">"{{ $artikel->judul }}"</h4>
             @if ($artikel->kategori_id == 2) <!-- Cek apakah kategori adalah Pengumuman -->
             <a href="{{ asset('uploads/' . $artikel->file_dokumen) }}" target="_blank">Silahkan Klik Untuk Mendownload File Pengumuman</a>

@@ -37,7 +37,7 @@
                     <a href="{{ route('frontend.berita.berita') }}" class="wrap">Berita</a>
                 </li>            
                 <li class="overflow {{ request()->is('kontak*') ? ' active' : '' }}">
-                    <a href="#" class="wrap">Kontak</a>
+                    <a href="{{ route('frontend.kontak.kontak') }}" class="wrap">Kontak</a>
                 </li>
           </ul>
       </div>

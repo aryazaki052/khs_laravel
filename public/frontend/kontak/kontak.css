@@ -1,0 +1,175 @@
+/* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reseting */
+
+
+
+.bungkus {
+    max-width: 350px;
+    min-height: 500px;
+    margin: 150px auto;
+    padding: 40px 30px 30px 30px;
+    background-color: #ecf0f3;
+    border-radius: 15px;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+}
+.bungkus1{
+  margin-left: 180px;
+}
+.bungkus2{
+  margin-right: 180px;
+}
+
+
+
+
+
+.bungkus .name {
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: 1.3px;
+    padding-left: 10px;
+    color: #555;
+}
+
+.bungkus .form-field input {
+    width: 100%;
+    display: block;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 10px 15px 10px 10px;
+    /* border: 1px solid red; */
+}
+
+.bungkus .form-field {
+    padding-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
+.bungkus .form-field .fas {
+    color: #555;
+}
+
+.bungkus .btn {
+    box-shadow: none;
+    width: 100%;
+    height: 40px;
+    background-color: #03A9F4;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: 3px 3px 3px #b1b1b1,
+        -3px -3px 3px #fff;
+    letter-spacing: 1.3px;
+}
+
+.bungkus .btn:hover {
+    background-color: #039BE5;
+}
+
+.bungkus a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: #03A9F4;
+}
+
+.bungkus a:hover {
+    color: #039BE5;
+}
+.medsos1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.medsos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  gap: 5px;
+}
+.medsos i {
+  color: black;
+}
+.medsos h1 {
+  color: black;
+
+}
+.icon{
+  font-size: 40px;
+}
+
+.form-field textarea {
+  background-color: transparent; /* Menghapus background color */
+  border: none; /* Menghilangkan border secara default */
+  padding: 8px; /* Padding agar isi teks tidak terlalu dekat dengan tepi textarea */
+  width: 100%; /* Lebar textarea mengisi seluruh ruang yang tersedia */
+  box-sizing: border-box; /* Menghitung padding dan border dalam perhitungan lebar */
+  transition: border-color 0.3s; /* Efek transisi pada perubahan border-color */
+}
+
+/* Style textarea saat dalam mode fokus */
+.form-field textarea:focus {
+  outline: none; /* Menghilangkan focus outline bawaan browser */
+  border-color: #ccc; /* Memberikan border color saat dalam mode fokus */
+}
+.border1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media(max-width: 1200px) {
+
+.icon{
+  font-size: 35px;
+  color: black;
+}
+.medsos h1{
+  font-size: 35px;
+}
+.bungkus {
+  max-width: 400px;
+  min-height: 500px;
+  margin: 150px auto;
+  padding: 40px 30px 30px 30px;
+  background-color: #ecf0f3;
+  border-radius: 15px;
+  box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+}
+}
+@media(max-width: 780px) {
+  .bungkus {
+    max-width: 450px;
+    margin: 30px 20px;
+    padding: 40px 15px 15px 15px;
+}
+.tengah{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+}
+.container{
+  margin-top: 100px;
+}
+
+.icon{
+  font-size: 30px;
+}
+.medsos i {
+  color: black;
+  font-size: 30px;
+}
+}
+@media(max-width: 380px) {
+    .bungkus {
+        margin: 30px 20px;
+        padding: 40px 15px 15px 15px;
+    }
+}
